@@ -18,12 +18,30 @@
 // 6. convert this element from an array element into a string and replace lingering commas with space
 // 7. return the final answer! WOO.
 
+
+// function capitalize(str) {
+//     let result = str[0].toUpperCase();
+//     for (let i = 1; i < str.length; i++) {
+//       if (str[i - 1] === ' ') {
+//         result += str[i].toUpperCase();
+//       } else {
+//         result += str[i];
+//         console.log(result)
+
+//       }
+//     }
+
+//     return result;
+//   }
+
+// below: me
+
 function capitalize(strings) {
     const stringArray = strings.split(" ")
     const answerArray = []
 
     for (let str of stringArray) {
-        capStr = str[0].toUpperCase() + str.slice(1, (str.length)).toLowerCase()
+        capStr = str[0].toUpperCase() + str.slice(1).toLowerCase()
         answerArray.push(capStr)
     }
     answerArray.join(' ')
