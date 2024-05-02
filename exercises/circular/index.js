@@ -12,6 +12,18 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+    // create variable lists starting at beginning of argument list
+    let slow = list.getFirst()
+    let fast = list.getFirst()
+    // while there is additional upcoming linked lists within either slow or fast designation, MOVE UP the list.
+    while (fast.next && fast.next.next) {
+    // if the lists both arrive at the same point, ie null or the same value, it is a circular list
+        if (slow === fast) {
+            return true
+        }
+    }
+    return false
+}
 
 module.exports = circular;
