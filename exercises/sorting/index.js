@@ -4,21 +4,17 @@
 // [0]
 
 
-const  bubbleSort = (arr) => {
-let swaps = Infinity
-while(swaps > 0){
-  swaps = 0
-  for (let i = 0 ; i < arr.length; i++){
-    if( arr[i] > arr[i+1] ){
-      const temp1 = arr[i]
-      const temp2 = arr[i+1]
-      arr[i] = temp2
-      arr[i+1] = temp1
-      swaps +=1
+function bubbleSort(arr){
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < (arr.length - i - 1); j++) {
+      if (arr[j] > arr[j + 1]) {
+        const lesser = arr[j + 1]
+        arr[j + 1] = arr[j]
+        arr[j] = lesser
+      }
     }
   }
-}
-return arr;
+  return arr
 }
 
 function insertionSort(arr){
@@ -38,7 +34,22 @@ function insertionSort(arr){
 
 
 function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let indexOfMin = i
 
+    for (let j = i+1; j < arr.length; j++) {
+      if (arr[j] < arr[indexOfMin]) {
+        indexOfMin = j
+      }
+    }
+
+    if (indexOfMin !== i) {
+      let lesser = arr[indexOfMin]
+      arr[indexOfMin] = arr[i]
+      arr[i] = lesser
+    }
+  }
+  return arr
 }
 
 function mergeSort(arr) {

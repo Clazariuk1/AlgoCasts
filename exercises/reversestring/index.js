@@ -6,6 +6,12 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse(str) {
+    const reversed = str.split('').reverse().join('')
+    return reversed
+}
 
 module.exports = reverse;
+
+
+console.log(reverse("kevin")) // nivek
